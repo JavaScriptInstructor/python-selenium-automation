@@ -1,7 +1,6 @@
-Feature: Test Scenarios for Search functionality
+Feature: Test Scenarios for cart
 
-  Scenario: User can search for a product
-    Given Open Google page
-    When Input Car into search field
-    And Click on search icon
-    Then Product results for Car are shown
+  Scenario: User can see Empty Cart message
+    Given Open Target main page
+    When Click on cart icon
+    Then Empty Cart message is shown
