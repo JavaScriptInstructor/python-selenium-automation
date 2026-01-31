@@ -13,7 +13,7 @@ from time import sleep
 
 @when('Click on cart icon')
 def click_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
+    context.app.header.click_cart()
 
 
 @when('Search for {product}')
@@ -27,9 +27,7 @@ def search_product(context, product):
 
 @then('Empty Cart message is shown')
 def verify_empty_cart_msg(context):
-    actual_text = context.driver.find_element(By.CSS_SELECTOR, "[data-test= 'boxEmpty']")
-    assert 'Your cart is empty' in actual_text, f"Expected 'Your cart is empty' text"
-
+    context.app.cart_page.verify_empty_cart_msg()
 
 @when('Click on Account')
 def click_account(context):

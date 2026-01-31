@@ -13,6 +13,9 @@ SIDE_NAV_PRODUCT_NAME = (By.CSS_SELECTOR, "[data-tests= 'content-wrapper') h4")
 TARGET_CIRCLE_RESULTS = (By.CSS_SELECTOR,"[data-test = 'storycardWrapperElement-div']")
 COLOR_OPTIONS = (By.CSS_SELECTOR, "li[class*='CarouselItem'] img")
 SELECTED_COLOR = (By.CSS_SELECTOR, "[data-test='@web/VariationComponent'] div")
+LISTINGS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
+PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
+PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
 
 @given('Open Target main page')
 def open_main(context):

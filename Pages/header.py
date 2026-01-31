@@ -12,3 +12,6 @@ class Header(Page):
         self.input_text(product, *self.SEARCH_FIELD)
         self.click(*self.SEARCH_ICON)
         sleep(10)
+
+    def click_cart(self):
+        self.wait_until_clickable_click(*self.CART_ICON)

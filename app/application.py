@@ -1,3 +1,4 @@
+from pages.cart_page import CartPage
 from pages.header import Header
 from pages.main_page import MainPage
 from pages.search_results_page import SearchResultsPage
