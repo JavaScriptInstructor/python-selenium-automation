@@ -1,22 +1,27 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.common.keys import Keys
+from time import sleep
 
 SEARCH_FIELD = (By.ID, 'search')
 SEARCH_ICON = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
 
-@given('Open Target main page')
-def open_main(context):
-    context.driver.get('https://www.target.com/')
+
+#@given('Open Target main page')
+#def open_main(context):
+#    context.driver.get('https://www.target.com/')
 
 @when('Click on cart icon')
 def click_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
 
+
 @when('Search for {product}')
 def search_product(context, product):
     context.driver.find_element(*SEARCH_FIELD).send_keys(product)
     context.driver.find_element(*SEARCH_ICON).click()
+    sleep(10)
 
 #@then('Search results for {expected_product} are shown')
 #def verify_search_results(context, expected_product):

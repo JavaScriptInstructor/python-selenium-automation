@@ -17,7 +17,7 @@ Feature: Test Scenarios for cart
 
   Scenario: User can add a product to cart
     Given Open Target main page
-    When Search for mug
+    When Search for tea
     And Click on Add to Cart button
     And Confirm Add to Cart button
     And Confirm Add to Cart button from side navigation
