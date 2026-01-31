@@ -32,3 +32,8 @@ Feature: Test Scenarios for cart
   Scenario: User can see Storycard
     Given Open Target Circle page
     Then Confirm Two Storycard links are shown
+
+  Scenario: User can search for book on Target
+    Given Open Target main page
+    When Search for book
+    Then Search results for book are shown

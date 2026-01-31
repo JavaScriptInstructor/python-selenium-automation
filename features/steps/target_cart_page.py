@@ -16,7 +16,7 @@ SELECTED_COLOR = (By.CSS_SELECTOR, "[data-test='@web/VariationComponent'] div")
 
 @given('Open Target main page')
 def open_main(context):
-    context.driver.get('https://www.target.com/')
+    context.app.main_page.open_main_page()
 
 @when('Open cart page')
 def open_cart(context):
@@ -62,8 +62,16 @@ def verify_product(context):
 
 @then('Search results for {expected_product} are shown')
 def verify_search_results(context, expected_product):
-    actual_text = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
-    assert expected_product in actual_text, f'Expected text {expected_product} not in actual text {actual_text}'
+    context.app.search_results_page.verify_search_results()
+
+@then('Verify that every product has a name and an image')
+def verify_products_name_img(context):
+    products = context.driver.find_elements(*LISTINGS)  # [WebEl1, WebEl2, WebEl3, WebEl4]
+    for product in products[:8]:
+        title = product.find_element(*PRODUCT_TITLE).text
+        assert title, 'Product title not shown'
+        print(f'🟢{title}')
+        product.find_element(*PRODUCT_IMG)
 
 @given('Open Target Circle page')
 def open_main(context):
