@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from time import sleep
 from pages.base_page import Page
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Header(Page):
@@ -15,5 +14,6 @@ class Header(Page):
         sleep(10)
 
     def click_cart(self):
+        sleep(10)
         self.wait_until_clickable_click(*self.CART_ICON)
 
