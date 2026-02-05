@@ -28,6 +28,7 @@ def search_product(context, product):
 @then('Empty Cart message is shown')
 def verify_empty_cart_msg(context):
     context.app.cart_page.verify_empty_cart_msg()
+    sleep(15)
 
 @when('Click on Account')
 def click_account(context):

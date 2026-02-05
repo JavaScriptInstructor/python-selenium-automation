@@ -1,12 +1,13 @@
 from selenium.webdriver.common.by import By
 from time import sleep
 from pages.base_page import Page
-
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Header(Page):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_ICON = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
+    CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartIcon']")
 
     def search(self, product):
         self.input_text(product, *self.SEARCH_FIELD)
@@ -15,3 +16,4 @@ class Header(Page):
 
     def click_cart(self):
         self.wait_until_clickable_click(*self.CART_ICON)
+
